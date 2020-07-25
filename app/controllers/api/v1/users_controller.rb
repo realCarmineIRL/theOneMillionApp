@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(get_params)
+    @user = User.new(params)
     @user.save
   end
 
@@ -16,9 +16,4 @@ class Api::V1::UsersController < ApplicationController
     render json: @user
   end
 
-  private
-
-  def get_params
-    params.require(:username).permit(:first_name, :last_name)
-  end
 end
