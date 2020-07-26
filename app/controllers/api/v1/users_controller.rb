@@ -8,6 +8,8 @@ class Api::V1::UsersController < ApplicationController
   def create
     @user = User.new(get_params)
     @user.save
+
+    render json: @user
   end
 
   def show
