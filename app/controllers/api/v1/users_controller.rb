@@ -13,13 +13,13 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(params[:username])
+    @user = User.where(params[:id])
 
     render json: @user
   end
 
   def destroy
-    @user = User.where(params[:username])
+    @user = User.where(params[:id])
     @user.destroy
     render json: @user
   end
